@@ -5,19 +5,6 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter import ttk
 import os
-import webbrowser
-
-
-html_file = 'index.html'
-
-
-flag_file = 'flag.txt'
-if not os.path.exists(flag_file):
-    webbrowser.open(html_file)
-
-
-    with open(flag_file, 'w') as file:
-        file.write('Flag')
 
 pygame.mixer.init() 
 
@@ -66,19 +53,19 @@ root.geometry("400x400")
 
 
 folder_path = tk.StringVar()
-folder_label = ttk.Label(root, text="Выберите папку с музыкой:")
+folder_label = ttk.Label(root, text="Select music folder:")
 folder_label.pack(pady=10)
 folder_frame = ttk.Frame(root)
 folder_frame.pack()
 folder_entry = ttk.Entry(folder_frame, textvariable=folder_path)
 folder_entry.pack(side=tk.LEFT, padx=5)
-folder_button = ttk.Button(folder_frame, text="Обзор", command=choose_folder)
+folder_button = ttk.Button(folder_frame, text="Review", command=choose_folder)
 folder_button.pack(side=tk.LEFT, padx=5)
 
 
 track_frame = ttk.Frame(root)
 track_frame.pack(pady=10)
-track_label = ttk.Label(track_frame, text="Список треков:")
+track_label = ttk.Label(track_frame, text="Track list:")
 track_label.pack()
 scrollbar = ttk.Scrollbar(track_frame)
 scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
@@ -90,17 +77,17 @@ scrollbar.config(command=track_list.yview)
 
 control_frame = ttk.Frame(root)
 control_frame.pack(pady=10)
-play_button = ttk.Button(control_frame, text="Воспроизвести", command=play_selected_track)
+play_button = ttk.Button(control_frame, text="Play", command=play_selected_track)
 play_button.pack(side=tk.LEFT, padx=5)
-stop_button = ttk.Button(control_frame, text="Остановить", command=stop_music)
+stop_button = ttk.Button(control_frame, text="Stop", command=stop_music)
 stop_button.pack(side=tk.LEFT, padx=5)
-random_button = ttk.Button(control_frame, text="Случайный трек", command=play_random_track)
+random_button = ttk.Button(control_frame, text="Random track", command=play_random_track)
 random_button.pack(side=tk.LEFT, padx=5)
 
 
 volume_frame = ttk.Frame(root)
 volume_frame.pack(pady=10)
-volume_label = ttk.Label(volume_frame, text="Громкость:")
+volume_label = ttk.Label(volume_frame, text="Volume:")
 volume_label.pack(side=tk.LEFT, padx=5)
 volume_scale = ttk.Scale(volume_frame, from_=0, to=100, orient=tk.HORIZONTAL, command=change_volume)
 volume_scale.pack(side=tk.LEFT, padx=5)
