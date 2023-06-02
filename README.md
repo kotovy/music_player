@@ -5,5 +5,5 @@ Installation.
 Before running the code, make sure you have the following dependencies installed:
 
 Python (version 3 or above)
-Pygamepip install pygame)
+Pygame pip install pygame)
 Tk
